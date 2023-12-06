@@ -1,11 +1,7 @@
 <?php 
 
 //imports:
-
-/*Ná página de formulário, por algum motivo só atualiza se mudar pra esse segundo import,
-causando, erro nas outras páginas por não encontrar mais a interface.*/
-require('src/php/interface/ConnectInterface.php');
-//require('../interface/ConnectInterface.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'\src\php\interface\ConnectInterface.php');
 use Controler\ConnectInterface as CI;
 
 /**
@@ -139,7 +135,7 @@ class ConnectDB implements CI{
      */
     public function readAllDates(): array{
         try {
-            $query = 'SELECT * FROM "Clients"';
+            $query = 'SELECT * FROM "Clients" ORDER BY name ASC';
             $sqlDates = $this -> conn -> query($query);
             $resultSql = $sqlDates -> fetchAll();
 

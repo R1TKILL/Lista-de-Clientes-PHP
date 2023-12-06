@@ -13,7 +13,9 @@
         $objSql -> updateFilterDate(...[$editId , $editName, $editEmail, $editAge, $editWork]);          
 
         #Recarregando o arquivo inicial.
-        header('Location: http://localhost:5555');
+        echo "<script>
+            window.document.location.replace(\"http://localhost:5555\");
+        </script>";
     }
 
 ?>
