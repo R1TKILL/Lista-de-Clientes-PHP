@@ -135,6 +135,7 @@ class ConnectDB implements CI{
      */
     public function readAllDates(): array{
         try {
+
             $query = 'SELECT * FROM "Clients" ORDER BY name ASC';
             $sqlDates = $this -> conn -> query($query);
             $resultSql = $sqlDates -> fetchAll();
@@ -144,6 +145,7 @@ class ConnectDB implements CI{
             }else{
                 return $resultSql;
             }
+            
         } catch (\PDOException $ex) {
             die("Erro ao tentar listar dados do Database = <strong>{$ex->getMessage()}</strong>");
         }
